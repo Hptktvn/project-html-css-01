@@ -1,0 +1,181 @@
+/* .box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  margin-top: 15px;
+  border: 15px solid blue;
+} */
+
+/* .box1 { */
+/* Giá trị mặc định */
+/* box-sizing: content-box; */
+/* Kích thước của hộp là kích thước cảu phần content */
+/* Phần content kích thước 100x100 */
+/* Nên phần viền nó phình ra bên ngoài */
+/* } */
+
+/* .box2 { */
+/* Giá trị mặc định */
+/* box-sizing: border-box; */
+/* Set kích thước hộp là kích của viền đổ vào trong */
+/* Tổng kích thước phần tử gồm nội dung và viền lúc nào cũng là 100 x 100 */
+/* Nên nó bóp phần content bên trong lại */
+/* } */
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  /* 1.6 rem = 16px */
+  font-size: 1.6rem;
+  font-family: Poppins, sans-serif;
+}
+
+/* **************** */
+/* CSS dùng chung (Common CSS) */
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+/* Khai báo biến CSS (custom properties) trong phần tử gốc :root*/
+:root {
+  --primary-text-color: #171100;
+  --background-color: #fffcf4;
+  --white-color: #fff;
+}
+/* :root là selector đại diện cho phần tử gốc của tài liệu HTML (thường là <html>)*/
+/* Các biến CSS được khai báo bằng cú pháp --tên-biến */
+/* Sau đó, bạn có thể sử dụng lại biến đó ở bất kỳ đâu bằng var(--tên-biến)*/
+/* --primary-text-color: Màu chữ chính (đen nâu đậm)*/
+/* --background-color: Màu nền (vàng kem nhạt) */
+/* --white-color: Màu trắng */
+
+/* Start CSS Header Section */
+
+.header {
+  background-color: var(--background-color);
+  padding-top: 44px;
+  padding-bottom: 44px;
+}
+.header .main-content {
+  width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  /* short hand: "margin: 0 auto;" */
+  max-width: calc(100% - 24px);
+  /* Cú pháp max-width: calc(100% - 24px); nghĩa là
+  lấy 100% chiều rộng full của khung nhìn trừ đi 24 px
+  tức là trừ đi 12px ở mỗi bên trái/phải 
+  tức là bất kể khung hình có độ rộng bao nhiêu 
+  luôn chừa 2 lề 2 bên, mỗi bên 12 px
+  Lý do nó luôn trừ đều 2 bên là do mình căn giữa rồi */
+}
+.header .body {
+  display: flex;
+  align-items: center;
+  /* Thêm dòng align-items: center; để căn giữa chữ Sign Up theo trục dọc */
+}
+/* Định dạng thanh navigation */
+.header nav {
+  display: flex;
+  margin-left: auto;
+  /* Thêm margin-left: auto; để kéo thanh navigation qua phải */
+  /* Do thằng sign up nó nằm bên phải thanh navigation
+  nên khi thanh này bị kéo qua phải, thì nút "Sign Up" cũng bị kéo qua luôn */
+}
+/* Định dạng từng nút Home/Course/Pricing/Reviews */
+.header nav a {
+  font-size: 1.6rem;
+  line-height: 28px;
+  color: #5f5b53;
+  padding-left: 21px;
+  padding-right: 21px;
+  /* Sử dụng padding-left/right 21px ở đây là vì 
+  các nút phía trên cách nhau 1 khoản bằng nhau là 42px */
+  /* Nút Home đang cách nút course tới 43px là do 
+  chữ "Home" nó đậm hơn nên khoản cách no xa ra thêm 1px */
+  /* Ở đây dùng margin cũng cách ra được, nhưng phải bấm chính xác vào chữ mới được
+  Còn nếu dùng padding thì diện tích bấm tăng ra xung quang, 
+  nên chỉ cần để chuột gần chữ là đã bấm được rồi */
+}
+/* Tạo hiệu ứng bóng mờ khi rê chuột vào chữ */
+/* Sử dụng Pseudo class: Lớp giả */
+.header nav a:hover {
+  color: var(--primary-text-color);
+  text-shadow: 1px 0 0 currentColor;
+  /* Cú pháp text-shadow trên có nghĩa là:
+  bóng dịch sang phải 1px, ko dịch lên xuống
+  ko làm mờ và sử dụng màu của thuộc tính hiện tại
+  sử dụng "currentColor" để tái sử dụng code
+  */
+}
+/* Tạo hiệu ứng chữ in đậm khi click vào, như chữ "Home" bên trên */
+.header nav a.active {
+  font-weight: 600; /*Tức là 16px*/
+  /* Kiểu thường trên figgma là regular, thường có mức đậm là 400
+  Trong bài này chữ này in đâm ở mức "semibold" là trên 2 bậc
+  lấy độ đậm là font-weight: 600 */
+  color: var(--primary-text-color);
+  position: relative;
+  /* Thêm position: relative; cho hiệu ứng này, 
+để làm mốc tọa độ cho hiệu ứng gạch chân bên dưới
+để cái hiệu ứng gạch chân bên dưới đi theo cái hiệu ứng này luôn */
+  /* Sử dụng JavaScript để chuyển class="active" này cho nút được click vào
+Khi đó nút được chọn sẽ được in đậm lên */
+}
+
+/* Tạo hiệu ứng dấu gạch chân nhỏ khi click vào */
+/* Sử dụng Pseudo element (Phần tử giả) */
+.header nav a.active::after {
+  content: "";
+  width: 12px;
+  height: 2px;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -o-border-radius: 1px;
+  background: var(--primary-text-color);
+  display: block;
+  /* Do phần tử giả này mặc định display là inline
+  Nên để nó hiển thị ở 1 dòng riêng thì đổi lại display: block */
+  position: absolute;
+  /* Để postion absolute để dthoát phần tử này khỏi luồng dữ liệu */
+  top: 23px;
+  left: 22px;
+  /* Sử dụng top /left để điều chỉnh phần tử đến vị trí mong muốn
+  so với mốc tọa độ ở hiệu ứng trên */
+}
+
+/* Làm nút sign-up */
+/* Ở đây lấy class ="btn-sign-up" để viết nút riêng trước
+Nút chung tí mình sửa sau*/
+.header .body .btn-sign-up {
+  width: 144px;
+  /* height: 50px; */
+  line-height: 50px;
+  /* Ở đây sử dụng line-height: 50px; thay cho height: 50px;
+  thì chiều cao nút vẫn là 50 px và được thêm cái là 
+  chữ Sign Up tự động canh giữa thoe chiều dọc */
+  text-align: center;
+  /* Để canh giữa chữ Sign Up theo chiều ngang */
+  background-color: var(--primary-text-color);
+  color: var(--white-color);
+  border-radius: 24.5px;
+  -webkit-border-radius: 24.5px;
+  -moz-border-radius: 24.5px;
+  -ms-border-radius: 24.5px;
+  -o-border-radius: 24.5px;
+  margin-left: 49px;
+  /* Thêm margin left 49px ở đây vì 
+  khoản cách giữa nút sign up với review trong bài mẫu là 70px
+  mà chữ Review đã có padding-right là 21px rồi, 
+  nên chữ Sign Up thêm margin-left 49px nữa là được */
+}
+
+/* End CSS cho Header Section */
