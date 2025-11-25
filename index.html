@@ -11,6 +11,11 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Sen -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
     <!-- Reset CSS -->
     <link rel="stylesheet" href="./css/reset.css" />
     <!-- Custom CSS -->
@@ -36,5 +41,78 @@
         </div>
       </div>
     </header>
+
+    <section class="hero">
+      <!-- Bọc phần content bên dưới thanh navigation trong 1 div khác -->
+      <div class="main-content">
+        <!-- Bọc ngoài định dạng chiều rộng nội dung văn bản -->
+        <div class="left-box">
+          <!-- Div này để định dạng phần nội dung bên trái -->
+          <img src="./img/guy-lesson.jpg" alt="guy-lesson 1" />
+          <!-- Thẻ này gắn hình, phần alt để tên hình luôn -->
+          <div class="summary">
+            <!-- Thẻ div dùng để nhóm các item trong bảng màu trắng -->
+            <!-- mỗi div class="item dưới đây là tập hợp của 1 icon và 2 đoạn nội dung -->
+            <div class="item">
+              <img class="icon" src="./img/ui-deisgn.svg" alt="ui-deisgn" />
+              <!-- Dùng thẻ a để chứa icon -->
+              <div class="course-content">
+                <!-- Dùng div này để bọc 2 span dưới, tí dùng flex box để chuyển nội dung nằm dọc -->
+                <!-- 2 đọan này nhỏ đặt trong span đươc, ko cần để trong p -->
+                <span>20 Courses</span>
+                <span>UI/UX Design</span>
+              </div>
+            </div>
+            <div class="item">
+              <!-- Tương tự bên trên -->
+              <img class="icon" src="./img/development.svg" alt="development" />
+              <div class="course-content">
+                <span>20 Courses</span>
+                <span>Development</span>
+              </div>
+            </div>
+            <div class="item">
+              <!-- Tương tự bên trên -->
+              <img class="icon" src="./img/marketing.svg" alt="marketing" />
+              <div class="course-content">
+                <span>30 Courses</span>
+                <span>Marketing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right-box">
+          <!-- Div này để định dạng phần nội dung bên phải -->
+          <h1>Learn without limits and spread knowledge.</h1>
+          <!-- Đặt tiêu đề -->
+          <p class="desc">
+            Build new skills for that “this is my year” feeling with courses,
+            certificates, and degrees from world-class universities and
+            companies.
+          </p>
+          <!-- Viết đoạn mô tả -->
+          <div class="call-to-action">
+            <!-- Dùng thẻ div này để bọc 2 nút bên dưới -->
+            <!-- Dùng để set display plex để 2 nút này nằm ngang -->
+            <a href="" class="btn btn-see-courses">See Courses</a>
+            <!-- Nút"See Courses" này để điều hướng đi trang khóa học => Dùng thẻ a -->
+            <button class="btn-watch-video">
+              <!-- Nút"Watch Video" này để hiện video pop-ups => Dùng thẻ button là được -->
+              <img src="./img/play-icon.svg" alt="Watch Video" />
+              <span>Watch Video</span>
+              <!-- Trong nội dung thẻ button: chèn ảnh = thẻ img, bọc nội dung bằng thẻ span -->
+              <!-- Để định dạng các phần tử img với span trong này, đi từ cấp cha vào -->
+              <!-- Không cần tạo class cho img với span ở đây -->
+            </button>
+          </div>
+          <span class="recent-engagement">Recent engagement</span>
+          <!-- Do thẻ span này nằm ngoài, nên thêm class="recent-engagement"cho nó để tí CSS -->
+          <div class="stats">
+            <div class="item">50K<span>Students</span></div>
+            <div class="item">70+<span>Courses</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

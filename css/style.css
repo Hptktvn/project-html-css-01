@@ -45,8 +45,10 @@ li {
 /* Khai báo biến CSS (custom properties) trong phần tử gốc :root*/
 :root {
   --primary-text-color: #171100;
+  --secondary-text-color: #5f5b53;
   --background-color: #fffcf4;
   --white-color: #fff;
+  --font-heading: Sen, sans-serif;
 }
 /* :root là selector đại diện cho phần tử gốc của tài liệu HTML (thường là <html>)*/
 /* Các biến CSS được khai báo bằng cú pháp --tên-biến */
@@ -62,7 +64,7 @@ li {
   padding-top: 44px;
   padding-bottom: 44px;
 }
-.header .main-content {
+.main-content {
   width: 1170px;
   margin-left: auto;
   margin-right: auto;
@@ -75,6 +77,24 @@ li {
   luôn chừa 2 lề 2 bên, mỗi bên 12 px
   Lý do nó luôn trừ đều 2 bên là do mình căn giữa rồi */
 }
+
+.btn {
+  width: 144px;
+  line-height: 50px;
+  text-align: center;
+  background-color: var(--primary-text-color);
+  color: var(--white-color);
+  border-radius: 24.5px;
+  -webkit-border-radius: 24.5px;
+  -moz-border-radius: 24.5px;
+  -ms-border-radius: 24.5px;
+  -o-border-radius: 24.5px;
+  /* Ở đây sử dụng line-height: 50px; thay cho height: 50px;
+  thì chiều cao nút vẫn là 50 px và được thêm cái là 
+  chữ Sign Up tự động canh giữa thoe chiều dọc */
+  /* Thêm text-align: center; Để canh giữa chữ Sign Up theo chiều ngang */
+}
+
 .header .body {
   display: flex;
   align-items: center;
@@ -156,21 +176,6 @@ Khi đó nút được chọn sẽ được in đậm lên */
 /* Ở đây lấy class ="btn-sign-up" để viết nút riêng trước
 Nút chung tí mình sửa sau*/
 .header .body .btn-sign-up {
-  width: 144px;
-  /* height: 50px; */
-  line-height: 50px;
-  /* Ở đây sử dụng line-height: 50px; thay cho height: 50px;
-  thì chiều cao nút vẫn là 50 px và được thêm cái là 
-  chữ Sign Up tự động canh giữa thoe chiều dọc */
-  text-align: center;
-  /* Để canh giữa chữ Sign Up theo chiều ngang */
-  background-color: var(--primary-text-color);
-  color: var(--white-color);
-  border-radius: 24.5px;
-  -webkit-border-radius: 24.5px;
-  -moz-border-radius: 24.5px;
-  -ms-border-radius: 24.5px;
-  -o-border-radius: 24.5px;
   margin-left: 49px;
   /* Thêm margin left 49px ở đây vì 
   khoản cách giữa nút sign up với review trong bài mẫu là 70px
@@ -179,3 +184,181 @@ Nút chung tí mình sửa sau*/
 }
 
 /* End CSS cho Header Section */
+
+/* Hero section */
+.hero {
+  background-color: var(--background-color);
+  padding-top: 44px;
+  padding-bottom: 44px;
+}
+.hero .main-content {
+  display: flex;
+}
+.hero .left-box {
+  width: 48.7%;
+  /* Ko dùng px mà dùng % vì nó là đơn vị tương đối
+Nó sẽ chia theo kích thước của thiết bị  */
+  position: relative;
+}
+
+.hero .left-box > img {
+  width: 470px;
+  height: 685px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.hero .left-box .summary {
+  width: 270px;
+  height: 244px;
+  background-color: #fff;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  padding: 24px;
+  position: absolute;
+  right: 0px;
+  bottom: 100px;
+}
+.hero .left-box .item {
+  display: flex;
+  /* Để hiện thị icon và chữ nằm ngang */
+  align-items: center;
+  /* Để căn icon nằm và chữ nằm thẳng hàng với nhau */
+  margin: 7px 0;
+  /* top margin và bottom margin là 7px, và left-right margin là 0 */
+}
+.hero .left-box span {
+  display: block;
+}
+.hero .left-box .icon {
+  margin-right: 16px;
+  /* Chỉ viết margin-right là để nó cách 1 phần chữ ra 16px */
+  width: 48px;
+  height: 48px;
+}
+
+.hero .left-box .course-content span:first-child {
+  font-size: 1.4rem;
+  line-height: 26px;
+}
+.hero .left-box .course-content span:last-child {
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 30px;
+}
+.hero .left-box .summary .item:first-child {
+  margin-top: 0px;
+}
+.hero .left-box .summary .item:last-child {
+  margin-bottom: 0px;
+}
+.hero .right-box {
+  width: 51.3%;
+  padding-left: 116px;
+  /* Dùng padding left thêm ở đây 
+  vì phát hiện nội dung cách 1 khoản so với lề trái
+  Khoản cách cách ra theo trên figma là 130px
+  Nhưng thầy giảm còn 116px để nó thẳng hàng nút Sign-Up bên trên */
+}
+
+.hero .right-box h1 {
+  width: 488px;
+  /* Trong này chỉ set width ko set height */
+  /* Số width theo figma là 470px, thầy tăng lên 488px để chữ dồn về 3 dòng */
+  /* Chỗ này thầy nó có thể tăng giảm để nó khớp với bài mẫu */
+  font-family: var(--font-heading);
+  font-size: 5.8rem;
+  font-weight: 700;
+  line-height: 68px;
+  letter-spacing: -2%;
+  color: var(--primary-text-color);
+}
+
+.hero .right-box .desc {
+  font-size: 1.8rem;
+  line-height: 30px;
+  color: var(--secondary-text-color);
+  margin-top: 28px;
+  /* Khoản cách với tiêu đề là 28px */
+  margin-bottom: 38px;
+  /* Khoản cách với 2 nút bên dưới là 38px */
+}
+
+.hero .right-box .call-to-action {
+  display: flex;
+}
+.hero .right-box .btn-see-courses {
+  width: 180px;
+  line-height: 64px;
+  background-color: #ffb900;
+  border-radius: 32px;
+  -webkit-border-radius: 32px;
+  -moz-border-radius: 32px;
+  -ms-border-radius: 32px;
+  -o-border-radius: 32px;
+  height: 64px;
+  /*Chỗ height: 64px; này phải thêm vào để nó set height về 64px
+  Nếu ko để,thì nó tự động tính sao đó ra height=81px*/
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.hero .right-box .btn-watch-video {
+  display: flex;
+  background: none;
+  border: none;
+  align-items: center;
+  margin-left: 28px;
+  /* Thêm margin-left để cách nút "See Courses" ra 1 khoản 28px */
+}
+
+.hero .right-box .btn-watch-video span {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 30px;
+  margin-top: -10px;
+  /* align-items: center; */
+  /* Cái margin-top: -10px; là thầy canh bằng mắt,
+tự điền vào để đẩy chữ vào giữa thôi,sử dụng margin-top: -10px ko được */
+}
+
+.hero .right-box .recent-engagement {
+  display: inline-block;
+  width: 186px;
+  height: 30px;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--secondary-text-color);
+  margin-top: 48px;
+}
+
+.hero .right-box .stats {
+  display: flex;
+  margin-top: 8px;
+}
+
+.hero .right-box .stats > .item {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 4.4rem;
+  line-height: 54px;
+  color: var(--primary-text-color);
+}
+
+.hero .right-box .stats > .item:last-child {
+  margin-left: 29px;
+}
+
+.hero .right-box .stats span {
+  font-size: 1.8rem;
+  line-height: 30px;
+  color: var(--secondary-text-color);
+  padding-left: 14px;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+}
