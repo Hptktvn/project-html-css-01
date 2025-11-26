@@ -33,15 +33,23 @@ body {
   font-family: Poppins, sans-serif;
 }
 
-/* **************** */
-/* CSS dùng chung (Common CSS) */
+/***************************************** CSS dùng chung (Common CSS) *****************************************/
 a {
   text-decoration: none;
+  cursor: pointer;
+  /* cursor: pointer; dùng để hiện icon bàn tay
+  khi người dùng rê chuột vào thẻ a */
 }
 
 li {
   list-style: none;
 }
+button {
+  cursor: pointer;
+  /* cursor: pointer; dùng để hiện icon bàn tay
+  khi người dùng rê chuột vào thẻ button */
+}
+
 /* Khai báo biến CSS (custom properties) trong phần tử gốc :root*/
 :root {
   --primary-text-color: #171100;
@@ -49,6 +57,7 @@ li {
   --background-color: #fffcf4;
   --white-color: #fff;
   --font-heading: Sen, sans-serif;
+  --primary-accent-color: #ffb900;
 }
 /* :root là selector đại diện cho phần tử gốc của tài liệu HTML (thường là <html>)*/
 /* Các biến CSS được khai báo bằng cú pháp --tên-biến */
@@ -57,7 +66,7 @@ li {
 /* --background-color: Màu nền (vàng kem nhạt) */
 /* --white-color: Màu trắng */
 
-/* Start CSS Header Section */
+/***************************************** Header Section *****************************************/
 
 .header {
   background-color: var(--background-color);
@@ -185,7 +194,7 @@ Nút chung tí mình sửa sau*/
 
 /* End CSS cho Header Section */
 
-/* Hero section */
+/***************************************** Hero section *****************************************/
 .hero {
   background-color: var(--background-color);
   padding-top: 44px;
@@ -314,19 +323,32 @@ Nó sẽ chia theo kích thước của thiết bị  */
   border: none;
   align-items: center;
   margin-left: 28px;
+  height: 64px;
   /* Thêm margin-left để cách nút "See Courses" ra 1 khoản 28px */
+  /* Set height: 64px; đẻ có cùng chiều cao với nút "See Courses" */
 }
 
-.hero .right-box .btn-watch-video span {
+.hero .right-box .btn-watch-video > span {
   font-size: 1.8rem;
   font-weight: 600;
-  line-height: 30px;
-  margin-top: -10px;
+  line-height: 64px;
+  /* margin-top: -10px; */
   /* align-items: center; */
   /* Cái margin-top: -10px; là thầy canh bằng mắt,
-tự điền vào để đẩy chữ vào giữa thôi,sử dụng margin-top: -10px ko được */
+tự điền vào để đẩy chữ vào giữa thôi, sử dụng align-items: center; ko được */
 }
 
+.hero .right-box .btn-watch-video > img {
+  width: 80px;
+  height: 80px;
+  margin-top: 12px;
+  /* icon là ảnh (<img>) nên không tự căn giữa theo chiều dọc trong flex container
+Dùng margin-top: 10px để căn giữa cho nhanh
+  /* vertical-align: middle; */
+  /* Dùng vertical-align: middle; ko ngon bằng margin-top: 12px */
+  /* vertical-align: middle; chekc bằng mắt thấy vẫn chưa giữa
+  dùng margin-top: 12px tự điều chỉnh căn giữa thấy giữa hơn*/
+}
 .hero .right-box .recent-engagement {
   display: inline-block;
   width: 186px;
@@ -361,4 +383,201 @@ tự điền vào để đẩy chữ vào giữa thôi,sử dụng margin-top: -
   padding-left: 14px;
   font-family: Poppins, sans-serif;
   font-weight: 400;
+}
+/***************************************** Our Popular Courses *****************************************/
+.popular-courses {
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+.popular-courses .info-box {
+  display: flex;
+  justify-content: space-between;
+  /* justify-content: space-between; dùng để 
+  dàn đều các phần tử sang 2 bên. 
+  Trong thẻ div class="info-box" có 2 phần tử 
+  đã được dàn ra ngang bằng flex, giờ dùng thêm 
+  justify-content: space-between; để nó dàn ra 2 bên*/
+  align-items: center;
+  /* Dùng để căn 2 nút mũi tên nằm giữa với 2 đoạn text bên trái*/
+}
+.popular-courses .info-box h2 {
+  font-family: var(--font-heading);
+  font-size: 3.8rem;
+  font-weight: bold;
+  line-height: 48px;
+  letter-spacing: -2%;
+  color: var(--primary-text-color);
+}
+.popular-courses .info-box p {
+  width: 458px;
+  height: 60px;
+  /* Set width và height cho thẻ p này để đoạn văn xuống dòng
+  nhu trong bài mẫu */
+  font-size: 1.8rem;
+  line-height: 30px;
+  color: var(--secondary-text-color);
+  margin-top: 16px;
+  /* margin top để cách với heading bên trên */
+}
+/* Để tạo nút mũi tên về trước */
+.popular-courses .pre-next-button button:first-child,
+.popular-courses .pre-next-button button:last-child {
+  background: white;
+  border: 1px solid var(--primary-accent-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+/* Để tạo nut mũi tên về sau */
+.popular-courses .pre-next-button button:last-child {
+  background: var(--primary-accent-color);
+  border: 1px white;
+  margin-left: 18px;
+  /* Mũi tên sau sẽ lấy các thuộc tính của mũi tên trước
+và đổi thêm 1 vài thông số dưới đây thôi */
+}
+.popular-courses .courses-list {
+  display: flex;
+  gap: 30px;
+  /* Sử dụng thuộc tính gap để set khoản cách cho các phần tử
+  Như trong ví dụ này là 30px giữa các phần tử */
+  margin-top: 55px;
+}
+.popular-courses .course-item {
+  box-shadow: 2px 4px 12px -10px #5f5b53;
+}
+.popular-courses .course-item .thumbnail {
+  width: 370px;
+  height: 270px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.popular-courses .course-item .course-info {
+  padding: 22px;
+  /* Dùng để cách phần nội dung ra so với lề 22px */
+}
+.popular-courses .course-info h3 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 30px;
+}
+.popular-courses .course-info .heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--primary-text-color);
+}
+
+.popular-courses .course-info .heading span {
+  color: var(--primary-accent-color);
+  font-size: 1.6rem;
+  line-height: 28px;
+  margin-top: 1px;
+  margin-left: 6px;
+}
+.popular-courses .course-info .heading img {
+  width: 18px;
+  height: 18px;
+}
+.popular-courses .course-info .heading div {
+  display: flex;
+  align-items: center;
+}
+.popular-courses .course-info .desc {
+  font-size: 1.4rem;
+  line-height: 26px;
+  color: var(--secondary-text-color);
+  margin-bottom: 12px;
+}
+.popular-courses .course-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popular-courses .course-price span {
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 30px;
+}
+.popular-courses .course-price .btn-book-now {
+  background-color: var(--primary-text-color);
+  color: white;
+}
+.popular-courses .course-price .btn-book-now:hover {
+  background-color: var(--primary-accent-color);
+}
+/***************************************** Testimonials *****************************************/
+.testimonials {
+  background-color: #2e2100;
+  color: white;
+  padding-top: 104px;
+  /* padding-left: 55px; */
+  /* Ko cần padding-left ở đây, để nó thẳng hàng 
+  với các phần tử ở sections trên luôn */
+  padding-bottom: 88px;
+}
+.testimonials .main-content {
+  display: flex;
+  justify-content: space-between;
+}
+.testimonials .left-box .avatar {
+  width: 72px;
+  height: 72px;
+}
+.testimonials .left-box .author {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-size: 2.4rem;
+  line-height: 34px;
+  color: #f7f7f7;
+  margin-top: 18px;
+}
+.testimonials .left-box .position {
+  font-size: 1.4rem;
+  line-height: 26px;
+  color: #bfbcb2;
+  margin-top: 4px;
+  margin-bottom: 28px;
+  display: block;
+}
+.testimonials .left-box .slides {
+  display: flex;
+  gap: 6px;
+}
+.testimonials .left-box .slides .slide-item {
+  width: 6px;
+  height: 6px;
+  background-color: #634700;
+  border-radius: 500px;
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+  -ms-border-radius: 500px;
+  -o-border-radius: 500px;
+}
+.testimonials .left-box .slides .active {
+  background-color: var(--primary-accent-color);
+}
+.testimonials .right-box {
+  width: 770px;
+  position: relative;
+}
+.testimonials .right-box img {
+  position: absolute;
+}
+.testimonials .right-box .quote {
+  font-style: italic;
+  font-size: 2.6rem;
+  line-height: 40px;
+  position: absolute;
+  /* top: 30px;
+  left: 30px; */
 }
