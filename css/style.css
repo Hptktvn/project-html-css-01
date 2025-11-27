@@ -231,7 +231,7 @@ Nó sẽ chia theo kích thước của thiết bị  */
   padding: 24px;
   position: absolute;
   right: 0px;
-  bottom: 100px;
+  bottom: 50px;
 }
 .hero .left-box .item {
   display: flex;
@@ -284,7 +284,7 @@ Nó sẽ chia theo kích thước của thiết bị  */
   font-size: 5.8rem;
   font-weight: 700;
   line-height: 68px;
-  letter-spacing: -2%;
+  letter-spacing: -0.116rem;
   color: var(--primary-text-color);
 }
 
@@ -353,7 +353,7 @@ Dùng margin-top: 10px để căn giữa cho nhanh
   display: inline-block;
   width: 186px;
   height: 30px;
-  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 30px;
   color: var(--secondary-text-color);
   margin-top: 48px;
@@ -405,7 +405,7 @@ Dùng margin-top: 10px để căn giữa cho nhanh
   font-size: 3.8rem;
   font-weight: bold;
   line-height: 48px;
-  letter-spacing: -2%;
+  letter-spacing: -0.076rem;
   color: var(--primary-text-color);
 }
 .popular-courses .info-box p {
@@ -578,6 +578,319 @@ và đổi thêm 1 vài thông số dưới đây thôi */
   font-size: 2.6rem;
   line-height: 40px;
   position: absolute;
-  /* top: 30px;
-  left: 30px; */
+  top: 30px;
+  left: 30px;
+}
+/***************************************** Learner outcomes *****************************************/
+.Learner-outcomes .upper {
+  display: flex;
+  padding-top: 200px;
+  padding-bottom: 100px;
+  gap: 30px;
+  /* Trên này 3 phần tử nên ko để justify-content: space-between; được 
+  Nếu bọc cả 2 hình trong 1 thẻ div thì vẫn được mà chưa cần*/
+}
+.Learner-outcomes .upper img {
+  width: 270px;
+  height: 405px;
+}
+.Learner-outcomes .upper > :first-child {
+  margin-top: 34px;
+}
+
+.Learner-outcomes .upper .upper-content {
+  padding-top: 58px;
+  padding-bottom: 58px;
+  padding-left: 100px;
+}
+/* Chỉnh tiêu đề */
+.Learner-outcomes .upper h3 {
+  width: 500px;
+  height: 96px;
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-size: 3.8rem;
+  line-height: 48px;
+  letter-spacing: -0.076rem;
+}
+/* Chỉnh đoạn văn */
+.Learner-outcomes .upper p {
+  width: 458px;
+  height: 84px;
+  margin-top: 16px;
+  font-size: 1.6rem;
+  line-height: 28px;
+  color: var(--secondary-text-color);
+}
+
+/* Chỉnh câu ngắn */
+.Learner-outcomes .upper span {
+  display: block;
+  width: 458px;
+  height: 28px;
+  margin-top: 16px;
+  font-size: 1.6rem;
+  line-height: 28px;
+  color: var(--secondary-text-color);
+}
+
+/* Chỉnh nút */
+.Learner-outcomes .upper a {
+  display: block;
+  width: 137px;
+  height: 50px;
+  margin-top: 32px;
+  padding: 11px 37px;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 28px;
+  color: var(--white-color);
+  background-color: #ffb900;
+  border: none;
+}
+
+.Learner-outcomes .lower {
+  display: flex;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  justify-content: space-between;
+}
+
+.Learner-outcomes .lower img {
+  width: 470px;
+  height: 440px;
+}
+
+.Learner-outcomes .lower .lower-content {
+  padding-top: 71px;
+  padding-bottom: 71px;
+  /* Ở đây ko cần set padding-left vì mình 
+  đã dùng justify-content: space-between; 
+  để tách 2 phần tử ra 2 bên rồi */
+}
+
+.Learner-outcomes .lower h3 {
+  width: 570px;
+  height: 144px;
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-size: 3.8rem;
+  line-height: 48px;
+  letter-spacing: -0.076rem;
+}
+
+.Learner-outcomes .lower p {
+  width: 570px;
+  height: 56px;
+  margin-top: 16px;
+  font-size: 1.6rem;
+  line-height: 28px;
+  color: var(--secondary-text-color);
+}
+/* Chỉnh nút */
+.Learner-outcomes .lower a {
+  display: block;
+  width: 137px;
+  height: 50px;
+  margin-top: 32px;
+  padding: 11px 30px;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 28px;
+  color: var(--white-color);
+  background-color: #ffb900;
+  border: none;
+}
+/***************************************** Our blog *****************************************/
+.Our-blog {
+  background-color: #fffcf4;
+}
+.Our-blog .main-content {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+.Our-blog .main-content h3 {
+  font-family: var(--font-heading);
+  text-align: center;
+  font-weight: bold;
+  font-size: 3.8rem;
+  line-height: 48px;
+  letter-spacing: -0.076rem;
+  color: #130606;
+}
+
+.Our-blog .main-content > p {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 448px;
+  height: 56px;
+  font-size: 1.6rem;
+  line-height: 28px;
+  color: #696262;
+  margin-top: 16px;
+  margin-bottom: 55px;
+}
+.Our-blog .blog-item-list {
+  display: flex;
+  gap: 30px;
+}
+
+.Our-blog .item {
+  background-color: var(--white-color);
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.Our-blog .item-content {
+  padding: 20px;
+}
+.Our-blog .date {
+  display: flex;
+  align-items: center;
+}
+.Our-blog .dot {
+  width: 6px;
+  height: 6px;
+  background-color: #ffb900;
+  border-radius: 500px;
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+  -ms-border-radius: 500px;
+  -o-border-radius: 500px;
+  margin-right: 4px;
+}
+.Our-blog .date span {
+  font-size: 1.4rem;
+  line-height: 26px;
+  color: var(--secondary-text-color);
+}
+.Our-blog .line {
+  width: 160px;
+  height: 1px;
+  background-color: #e2dfda;
+  margin: 12px 0px;
+}
+.Our-blog .item-content p {
+  width: 330px;
+  height: 56px;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 28px;
+}
+.Our-blog .item-content a {
+  display: block;
+  width: 118px;
+  height: 50px;
+  padding: 12px 21px;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 26px;
+  color: var() --white-color;
+  background-color: var(--primary-text-color);
+  border: none;
+  margin-top: 12px;
+}
+
+.Our-blog .item-content .btn-read-more-active {
+  background-color: #ffb900;
+}
+.Our-blog .slides {
+  display: flex;
+  align-items: center;
+  margin-top: 38px;
+  justify-content: center;
+  /* Ở đây ko dùng margin-left-right được, chỉ dùng justify-content mới căn giữa được*/
+}
+.Our-blog .slides .slide-item {
+  width: 6px;
+  height: 6px;
+  background-color: var(--secondary-text-color);
+  border-radius: 500px;
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+  -ms-border-radius: 500px;
+  -o-border-radius: 500px;
+  margin: 0px 3px;
+}
+.Our-blog .slides .active {
+  background-color: var(--primary-accent-color);
+}
+/***************************************** Footer *****************************************/
+.footer {
+  background-color: #2e2100;
+  padding-top: 96px;
+  height: 428px;
+}
+
+.footer .footer-structure {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .lesson p {
+  margin: 18px 0px;
+  height: 78px;
+  width: 267px;
+  font-size: 1.4rem;
+  line-height: 26px;
+  color: #bfbcb2;
+}
+.footer .social-network-icons img {
+  width: 18px;
+  height: 15px;
+  margin-right: 9px;
+}
+
+.footer .info {
+  display: flex;
+  gap: 130px;
+}
+
+.footer .info h3 {
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 28px;
+  color: var(--white-color);
+}
+.footer .info .line {
+  width: 130px;
+  height: 1px;
+  background-color: #59554b;
+  margin-top: 14px;
+  margin-bottom: 28px;
+}
+.footer .info p {
+  font-size: 1.4rem;
+  line-height: 26px;
+  color: #bfbcb2;
+  margin-bottom: 12px;
+}
+.footer .address {
+  width: 231px;
+}
+
+.footer .address strong {
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 26px;
+  color: var(--white-color);
+}
+
+.footer .line2 {
+  width: 1170px;
+  height: 1px;
+  background-color: #59554b;
+  margin-top: 38px;
+  margin-bottom: 28px;
+}
+
+.footer .main-content > p {
+  font-size: 1.4rem;
+  line-height: 26px;
+  color: #807d74;
+  text-align: center;
 }
